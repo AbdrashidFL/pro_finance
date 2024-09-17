@@ -1,0 +1,22 @@
+.buttonActionMode{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  justify-content: center;
+}
+.buttonActionMode._big{
+  width: 100%;
+  height: 90px;
+  color: white;
+  font-weight: 500;
+  border-radius: 25px;
+  background: dodgerblue;
+  font-size: 18px;
+}
+.buttonActionMode._small{
+  padding: 8px 5px;
+  color: white;
+  border-radius: 15px;
+  background: dodgerblue;
+
+}

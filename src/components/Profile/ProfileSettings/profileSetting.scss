@@ -1,0 +1,42 @@
+.profileSettings{
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 10px;
+  background: #171D2C;
+  &-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__title{
+      font-size: 24px;
+      color: #fff;
+      font-weight: 600;
+      span{
+        background: dodgerblue;
+        padding: 2px;
+        border-radius: 5px;
+      }
+    }
+    &__btn{
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 3px 5px;
+      font-size: 12px;
+      background: #283147;
+      color: #444F6B;
+      gap: 5px;
+      margin-right: 20px;
+    }
+  }
+}
+.ant-menu-submenu{
+  background: #283047;
+}
+.ant-menu{
+  background: transparent;
+}
