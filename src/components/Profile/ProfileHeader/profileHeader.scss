@@ -1,0 +1,58 @@
+.profileHeader{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  border-radius: 25px;
+  padding: 5px 15px;
+  &-wrap{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+  &-avatar{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    &__name{
+      color: #333
+    }
+    &__icon{
+      color: #333;
+    }
+  }
+  &-tariff{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #3D8BFE;
+    background: #EDF4FE;
+    border-radius: 20px;
+    padding: 20px;
+  }
+  &-actions{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    &__btn{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 25px;
+      padding: 10px;
+      gap: 5px;
+    }
+    &__out{
+      background: transparent;
+      border: 1px solid #333;
+      color: #333
+    }
+    &__link{
+      background: #FE6B17;
+      color: #fff;
+      &-icon{
+        margin-top: 2px;
+      }
+    }
+  }
+}
