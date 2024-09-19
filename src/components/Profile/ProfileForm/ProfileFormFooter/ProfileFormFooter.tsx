@@ -1,9 +1,6 @@
 import { Table } from 'antd';
 
 export const ProfileFormFooter = (data) => {
-    const totalProductsTransit = data.reduce((sum, item) => sum + item.productsTransit, 0);
-    const totalQuantityProducts = data.reduce((sum, item) => sum + item.quantityProducts, 0);
-
     const footerColumns = [
         {
             title: 'Итого',
@@ -20,6 +17,9 @@ export const ProfileFormFooter = (data) => {
             width: 128,
         },
     ];
+
+    const totalProductsTransit = data.reduce((sum, item) => sum + item.productsTransit, 0);
+    const totalQuantityProducts = data.reduce((sum, item) => sum + item.quantityProducts, 0);
 
     const dataSource = [
         {

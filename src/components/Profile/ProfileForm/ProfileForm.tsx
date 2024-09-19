@@ -1,14 +1,5 @@
-import { Button, Col, Form, FormInstance, Input, InputRef, Row, Select, Table } from 'antd';
-import {
-    createContext,
-    FC,
-    PropsWithChildren,
-    ReactNode,
-    useContext,
-    useEffect,
-    useRef,
-    useState,
-} from 'react';
+import { Form, FormInstance, Input, Select, Table } from 'antd';
+import { createContext, useState } from 'react';
 import { dataMock } from '../../../mocks/data.ts';
 import { EditableCell } from './EditableForm/EditableCell.tsx';
 import { EditableRow } from './EditableForm/EditableRow.tsx';
@@ -46,27 +37,6 @@ interface ColumnType {
 export const EditableContext = createContext<FormInstance<any> | null>(null);
 
 export const ProfileForm = () => {
-    const [tableData, setTableData] = useState([]);
-    const [category, setCategory] = useState<string>();
-
-    const handlerCategory = (value: string) => {
-        setCategory(value);
-    };
-    const onFinish = (values) => {
-        values.category = category;
-
-        const filtered = tableData.filter((item) => {
-            return Object.keys(values).every((key) => {
-                if (!values[key]) return true;
-                return String(item[key]).toLowerCase().includes(String(values[key]).toLowerCase());
-            });
-        });
-        setTableData(filtered);
-    };
-    const importFile = () => {
-        setTableData(dataMock);
-    };
-
     const defaultColumns: ColumnType[] = [
         {
             title: 'Barcode',
@@ -117,6 +87,27 @@ export const ProfileForm = () => {
             width: 100,
         },
     ];
+
+    const [tableData, setTableData] = useState([]);
+    const [typeProduct, setTypeProduct] = useState<string>();
+
+    const handlerCategory = (value: string) => {
+        setTypeProduct(value);
+    };
+    const onFinish = (values) => {
+        values.type = typeProduct;
+
+        const filtered = tableData.filter((item) => {
+            return Object.keys(values).every((key) => {
+                if (!values[key]) return true;
+                return String(item[key]).toLowerCase().includes(String(values[key]).toLowerCase());
+            });
+        });
+        setTableData(filtered);
+    };
+    const importFile = () => {
+        setTableData(dataMock);
+    };
 
     const handleSave = (row: ProductData) => {
         const newData = [...tableData];
@@ -188,7 +179,7 @@ export const ProfileForm = () => {
                                     <Input className="profileForm-item__label-input profileForm-item__label-size" />
                                 </div>
                             </Form.Item>
-                            <Form.Item name="category">
+                            <Form.Item name="type">
                                 <div className="profileForm-item__category">
                                     <p>Категория</p>
                                     <Select onChange={handlerCategory}>

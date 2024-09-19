@@ -44,11 +44,11 @@ export const EditableCell: FC<PropsWithChildren<EditableCellProps>> = ({
         }
     };
 
-    let childNode = children;
-    const inputNumberFields = ['productsTransit', 'quantityProducts', 'size', 'availableOrder'];
+    const getFormItem = () => {
+        const inputNumberFields = ['productsTransit', 'quantityProducts', 'size', 'availableOrder'];
 
-    if (editable) {
-        childNode = editing ? (
+        if (!editable) return children;
+        return editing ? (
             <Form.Item
                 name={dataIndex as any}
                 rules={[{ required: true, message: `${title} is required.` }]}
@@ -71,7 +71,7 @@ export const EditableCell: FC<PropsWithChildren<EditableCellProps>> = ({
                 {children}
             </div>
         );
-    }
+    };
 
-    return <td {...restProps}>{childNode}</td>;
+    return <td {...restProps}>{getFormItem()}</td>;
 };

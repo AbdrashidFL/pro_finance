@@ -7,12 +7,24 @@ import {
     SettingFilled,
 } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
-import { Button, ConfigProvider, Menu } from 'antd';
+import { ConfigProvider, Menu } from 'antd';
 import './profileSetting.scss';
 
 type MenuItem = Required<MenuProps>['items'][number];
 
 export const ProfileSettings = () => {
+    const themeMenu = {
+        components: {
+            Menu: {
+                darkPopupBg: '#171D2C',
+                itemMarginBlock: 10,
+                itemHeight: 60,
+                itemBorderRadius: 10,
+                subMenuItemBorderRadius: 20,
+            },
+        },
+    };
+
     const items: MenuItem[] = [
         {
             key: '1',
@@ -56,17 +68,6 @@ export const ProfileSettings = () => {
 
     const toggleMenu = () => {
         setShowMenu(!showMenu);
-    };
-    const themeMenu = {
-        components: {
-            Menu: {
-                darkPopupBg: '#171D2C',
-                itemMarginBlock: 10,
-                itemHeight: 60,
-                itemBorderRadius: 10,
-                subMenuItemBorderRadius: 20,
-            },
-        },
     };
     return (
         <div className="profileSettings">

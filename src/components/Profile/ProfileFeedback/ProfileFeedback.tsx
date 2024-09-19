@@ -7,13 +7,15 @@ export const ProfileFeedback = () => {
                 <div className="profileFeedback-contact">
                     <div className="profileFeedback-contact__item">
                         <p className="profileFeedback-contact__item-subtitle">Номер поддержки</p>
-                        <a href="tel:89999999999" className="profileFeedback-contact__item-text">
+                        <a href="#" className="profileFeedback-contact__item-text">
                             8 (999) 999 99 99
                         </a>
                     </div>
                     <div className="profileFeedback-contact__item">
                         <p className="profileFeedback-contact__item-subtitle">Почта поддержки</p>
-                        <a className="profileFeedback-contact__item-text">test@gmail.com</a>
+                        <a href="#" className="profileFeedback-contact__item-text">
+                            test@gmail.com
+                        </a>
                     </div>
                     <div className="profileFeedback-contact__item">
                         <p className="profileFeedback-contact__item-subtitle">Часы работы</p>
